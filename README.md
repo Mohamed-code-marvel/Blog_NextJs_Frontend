@@ -91,7 +91,7 @@ api
 
 ## Authentication
 
-- **User Registration and Login**: Located in `pages/auth`.
+- **User Registration and Login**: Located in `/login`.
 - **JWT Tokens**: Used for authentication.
 
 ### Example Authentication Flow
@@ -99,7 +99,7 @@ api
 1. **Registered**:
 
    ```javascript
-   api.post("/api/auth/register/", {
+   api.post("/api/register/", {
      username: "exampleUser",
      password: "examplePassword",
    });
@@ -108,7 +108,7 @@ api
 2. **Logged in**:
    ```javascript
    api
-     .post("/api/auth/login/", {
+     .post("/api/login/", {
        username: "exampleUser",
        password: "examplePassword",
      })
