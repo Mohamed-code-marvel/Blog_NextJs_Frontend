@@ -43,11 +43,6 @@ const BlogPost: React.FC<BlogPostProps> = ({ params }) => {
   const [showOptions, setShowOptions] = useState<null | number>(null);
   const router = useRouter();
 
-  // console.log(
-  //   JSON.stringify(session) +
-  //     "-----------------------------------session--BlogPage------------------------------------"
-  // );
-
   useEffect(() => {
     const fetchPost = async () => {
       try {
@@ -59,20 +54,7 @@ const BlogPost: React.FC<BlogPostProps> = ({ params }) => {
     };
 
     fetchPost();
-    // if (session) {
-    //   fetchPost();
-    //   fetchComments();
-    //   // console.log(
-    //   //   JSON.stringify(session) +
-    //   //     "-----------------------------------session--BlogPage------------------------------------"
-    //   // );
-    // } else {
-    //   // console.log(
-    //   //   JSON.stringify(session) +
-    //   //     "-----------------------------------No--session--BlogPage------------------------------------"
-    //   // );
-    //   router.push("/login");
-    // }
+
   }, [session, axiosAuth, id, router]);
 
   const handleDelete = async (commentId?: string) => {
@@ -96,9 +78,7 @@ const BlogPost: React.FC<BlogPostProps> = ({ params }) => {
     return null; // Return null while redirecting
   }
 
-  // if (!post) {
-  //   return notFound();
-  // }
+
 
   const handleComment = () => {
     setShowForm((prev) => !prev);

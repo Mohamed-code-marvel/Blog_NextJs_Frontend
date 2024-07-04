@@ -33,15 +33,10 @@ const EditBlog: React.FC<BlogPostProps> = ({ params }) => {
         if (!id) throw new Error("Post ID is missing"); // Handle missing ID more gracefully
         const fetchedPost = await axiosAuth.get<Post>(`/api/posts/${id}/`);
         setPost(fetchedPost.data);
-        // setPost({
-        //   title: "newjjj",
-        //   content: "This are my content",
-        //   author: "3",
-        // });
+
       } catch (error) {
         console.error("Error fetching post:", error);
-        // Redirect to 404 or handle error state
-        // router.push("/404");
+  
       }
     };
 

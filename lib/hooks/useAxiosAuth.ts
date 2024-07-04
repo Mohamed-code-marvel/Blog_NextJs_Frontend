@@ -6,11 +6,9 @@ import { useRefreshToken } from "./useRefreshToken";
 
 const useAxiosAuth = () => {
   const { data: session } = useSession();
-  // console.log(JSON.stringify(session)+"-----------------------------------session--useAxiosAuth------------------------------------")
 
   const refreshToken = useRefreshToken();
   
-  // console.log(refreshToken+"-----------------------------------refreshToken--------------------------------------")
   useEffect(() => {
     const requestIntercept = axiosAuth.interceptors.request.use(
       (config) => {

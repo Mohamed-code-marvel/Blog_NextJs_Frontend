@@ -5,7 +5,6 @@ import React from "react";
 
 const AppBar = () => {
   const { data: session } = useSession();
-  // console.log(JSON.stringify(session)+"-----------------------------------session--AppBar------------------------------------")
 
   return (
     <Nav>
@@ -36,9 +35,6 @@ const AppBar = () => {
             Sign In
           </button>
         )}
-        {/* <button onClick={() => console.log(JSON.stringify(session))}>
-          session
-        </button> */}
       </div>
     </Nav>
   );
