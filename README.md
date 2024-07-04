@@ -1,34 +1,136 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+````markdown
+# BlogNextJsDjango Frontend
 
-## Getting Started
+This project was a Next.js frontend application styled with Tailwind CSS and ShadCN, communicating with a Django backend API at `http://localhost:8000`.
 
-First, run the development server:
+## Setup Instructions
 
-```bash
-npm run dev
-# or
-yarn dev
+### Prerequisites
+
+- Node.js (>=18.x)
+- npm (>=6.x)
+
+### Installation
+
+1. **Cloned the repository**:
+   ```sh
+   git clone https://github.com/Mohamed-code-marvel/Blog_NextJs_Frontend.git
+   cd Blog_NextJs_Frontend
+   ```
+````
+
+2. **Installed dependencies**:
+
+   ```sh
+   npm install
+   ```
+
+3. **Ran the development server**:
+
+   ```sh
+   npm run dev
+   ```
+
+4. Opened [http://localhost:3000](http://localhost:3000).
+
+## Project Structure
+
+```plaintext
+Blog_NextJs_Frontend/
+├── components/        # Reusable UI components
+├── pages/             # Next.js pages (routes)
+├── app/               # Next.js pages (routes)
+├── public/            # Static files
+├── styles/            # Global and component-specific styles
+├── utils/             # Utility functions and constants
+├── .env.local         # Environment variables
+├── next.config.js     # Next.js configuration
+├── package.json       # Project metadata and scripts
+├── README.md          # Project documentation
+└── tailwind.config.js # Tailwind CSS configuration
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Available Scripts
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### `npm run dev`
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Runs the app in development mode at [http://localhost:3000](http://localhost:3000).
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### `npm run build`
 
-## Learn More
+Built the app for production to the `.next` folder.
 
-To learn more about Next.js, take a look at the following resources:
+### `npm run start`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Started the application in production mode. Ran `npm run build` first.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## API Integration
 
-## Deploy on Vercel
+The frontend used Axios to communicate with the Django backend.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Example Axios Request
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```javascript
+import axios from "axios";
+
+const api = axios.create({
+  baseURL: "http://localhost:8000",
+  headers: { "Content-Type": "application/json" },
+});
+
+api
+  .get("/api/posts/")
+  .then((response) => console.log(response.data))
+  .catch((error) => console.error(error));
+```
+
+## Styling
+
+- **Tailwind CSS**: Utility-first CSS framework.
+- **ShadCN**: Modern UI components.
+
+## Authentication
+
+- **User Registration and Login**: Located in `pages/auth`.
+- **JWT Tokens**: Used for authentication.
+
+### Example Authentication Flow
+
+1. **Registered**:
+
+   ```javascript
+   api.post("/api/auth/register/", {
+     username: "exampleUser",
+     password: "examplePassword",
+   });
+   ```
+
+2. **Logged in**:
+   ```javascript
+   api
+     .post("/api/auth/login/", {
+       username: "exampleUser",
+       password: "examplePassword",
+     })
+     .then((response) => {
+       const { access, refresh } = response.data;
+       // Stored tokens for authenticated requests
+     });
+   ```
+
+## Features
+
+- User authentication (register, login, logout)
+- Blog post management (create, read, update, delete)
+- Comment management (add, delete)
+
+## Assumptions and Simplifications
+
+- Backend API ran locally at `http://localhost:8000`.
+- Used JWT tokens for user authentication.
+
+This project demonstrated a full-stack application with a Next.js frontend and a Django backend, covering user authentication, blog post management, and comment functionality.
+
+```
+
+```
