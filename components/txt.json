@@ -1,0 +1,14 @@
+{
+  "tokens": {
+    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIwMDEwOTY2LCJpYXQiOjE3MjAwMDAxNjYsImp0aSI6IjQ0MTg1Mzk1MTgwZDQzMTg5MjcyYjBhMjU0NTFmMDUwIiwidXNlcl9pZCI6NH0.x12dpJGGICNntvD3Cq8u8PqdotmHnpdDQmNaL2tZ2dw",
+    "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcyMDI1OTM2NiwiaWF0IjoxNzIwMDAwMTY2LCJqdGkiOiJkMmFmYWZjOWYxMTg0MmRkOWVlYmM5MDc2MzEwMDY5MiIsInVzZXJfaWQiOjR9.Yzs0WKTwOOF1qPBMX_CqRlS7JDbfBdXOgvavYrdLDpg"
+  },
+  "user": {
+    "id": 4,
+    "username": "jhn",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_active": true
+  }
+}
