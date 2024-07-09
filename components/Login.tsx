@@ -1,8 +1,8 @@
 "use client";
 import { signIn } from "next-auth/react";
 import React, { useRef } from "react";
-import { Button } from "./ui/button";
 import TextBox from "@elements/TextBox";
+import { Button } from "./ui/button";
 
 const LoginPage = () => {
   const userName = useRef("");
@@ -28,13 +28,16 @@ const LoginPage = () => {
           type={"password"}
           onChange={(e) => (pass.current = e.target.value)}
         />
-        <button
+        {/* <button
           onClick={onSubmit}
           type="submit"
           className="bg-slate-900 text-white py-2 px-4 rounded"
         >
           Login
-        </button>
+        </button> */}
+        <Button onClick={onSubmit} variant="default">
+          Login
+        </Button>
       </div>
     </div>
   );
